@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coin Management System</title>
+  </head>
+  <body>
+    <header>
+      <h1>Coin Management System</h1>
+    </header>
+
+    <main>
+      {% include 'coin/search_coin.html' %}
+      {% block content %}
+      <!-- This block will be overridden by content from other templates -->
+      {% endblock %}
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

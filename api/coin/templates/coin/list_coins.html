@@ -1,0 +1,11 @@
+{% extends 'coin/base.html' %}
+{% block content %}
+<h2>Coin List</h2>
+<ul>
+  {% for coin in coins %}
+  <li>{{ coin.name }}</li>
+  {% empty %}
+  <li>No coin found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
