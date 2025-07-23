@@ -1,8 +1,17 @@
-python manage.py startapp recipe
-generate migration: python manage.py makemigrations recipe
-apply migration: python manage.py migrate
+## Django Recipe App
 
-run server: python manage.py runserver
+### Setup Instructions
 
+Follow the steps below to set up and run the Django `recipe` app:
+
+---
+
+### 🔧 Start a New App
+```bash
+python manage.py startapp coin
+python manage.py makemigrations recipe
+python manage.py migrate
+python manage.py runserver
+```
 
 
