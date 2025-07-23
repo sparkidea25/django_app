@@ -25,16 +25,16 @@ def update_coin(request, coin_id):
         form = CoinForm(request.POST, instance=coin)
         if form.is_valid():
             form.save()
-            return redirect('list_recipes')
+            return redirect('list_coins')
     else:
         form = CoinForm(instance=coin)
     return render(request, 'coin/update_coin.html', {'form': form})
 
-def delete_coin(request, recipe_id):
-    recipe = Coin.objects.get(pk=recipe_id)
+def delete_coin(request, coin_id):
+    recipe = Coin.objects.get(pk=coin_id)
     recipe.delete()
-    messages.success(request, 'Recipe deleted successfully.')
-    return redirect('list_recipes')
+    messages.success(request, 'Coin deleted successfully.')
+    return redirect('list_coins')
 
 
 def search_coins(request):
