@@ -23,9 +23,8 @@ from coin import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('coin/add/', views.add_coin, name='add_coin'),
-    path('coins/', views.list_coins, name='list_coins'),
+    path('', views.list_coins, name='list_coins'),
     path('coins/update/<int:coin_id>/', views.update_coin, name='update_coin'),
     path("coins/delete/<int:coin_id>/", views.delete_coin, name="delete_coin"),
     path("coins/search/", views.search_coins, name="search_coin"),
-
 ]

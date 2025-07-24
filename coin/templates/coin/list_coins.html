@@ -1,15 +1,36 @@
 {% extends 'coin/base.html' %}
 {% block content %}
+
+
+<!-- Create Coin button -->
+<a href="{% url 'add_coin' %}">
+  <button type="button" class="my-button">Create Coin</button>
+</a>
+
+
 <h2>Coin List</h2>
-<ul>
-  {% for coin in coins %}
-    <li>
-      {{ coin.name }}
-      <!-- Update button linking to the update page for this coin -->
-      <a href="{% url 'update_coin' coin.id %}">Update</a>
-    </li>
-  {% empty %}
-    <li>No coin found.</li>
-  {% endfor %}
-</ul>
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contract Address</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for coin in coins %}
+      <tr>
+        <td>{{ coin.name }}</td>
+        <td>{{ coin.contract_address }}</td>
+        <td>
+          <a href="{% url 'update_coin' coin.id %}">Update</a>
+        </td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="3">No coin found.</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
