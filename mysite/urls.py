@@ -16,15 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# from coin import views
 from coin import views
+from django.urls import path, include
+from django.views.generic.base import TemplateView
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("accounts/", include("django.contrib.auth.urls")),
     path('coin/add/', views.add_coin, name='add_coin'),
     path('', views.list_coins, name='list_coins'),
     path('coins/update/<int:coin_id>/', views.update_coin, name='update_coin'),
     path("coins/delete/<int:coin_id>/", views.delete_coin, name="delete_coin"),
     path("coins/search/", views.search_coins, name="search_coin"),
+    path("", TemplateView.as_view(template_name="home.html"), name="home"),  # new
 ]
