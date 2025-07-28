@@ -125,7 +125,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 # AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_URL = 'accounts:login'
-LOGIN_REDIRECT_URL = "/"  # new
+LOGIN_REDIRECT_URL = "/"
 # AUTHENTICATION_BACKENDS = [
 #     'accounts.backends.EmailOrUsernameModelBackend'
 # ]

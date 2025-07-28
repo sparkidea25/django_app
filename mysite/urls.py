@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 # from coin import views
 from coin import views
+from accounts import accountView
 from django.urls import path, include
 from django.views.generic.base import TemplateView
 
@@ -31,5 +32,7 @@ urlpatterns = [
     path('coins/update/<int:coin_id>/', views.update_coin, name='update_coin'),
     path("coins/delete/<int:coin_id>/", views.delete_coin, name="delete_coin"),
     path("coins/search/", views.search_coins, name="search_coin"),
-    path("", TemplateView.as_view(template_name="home.html"), name="home"),  # new
+    path('home/', TemplateView.as_view(template_name="home.html"), name="home"),
+    path('login/', accountView.login_page, name='login'),    # Login page
+    path('register/', accountView.register_page, name='register'),  # Registration page
 ]
